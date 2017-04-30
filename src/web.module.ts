@@ -13,7 +13,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 
 // app
 import { APP_COMPONENTS, AppComponent } from './app/components/index';
-import { SeedConfig } from '../tools/config/seed.config';
+import { BUILD_TYPES, SeedConfig } from '../tools/config/seed.config';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -22,12 +22,10 @@ import { AppReducer } from './app/shared/ngrx/index';
 import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
 import { MultilingualEffects } from './app/shared/i18n/index';
-import { SampleModule } from './app/shared/sample/sample.module';
 import { NameListEffects } from './app/shared/sample/index';
 
 // config
-import { Config, WindowService, ConsoleService, createConsoleTarget,
-  provideConsoleTarget, LogTarget, LogLevel, ConsoleTarget } from './app/shared/core/index';
+import { Config, WindowService, ConsoleService, LogTarget, LogLevel, ConsoleTarget } from './app/shared/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 
 
@@ -39,6 +37,8 @@ if (SeedConfig.BUILD_TYPE === 'dev') {
 // sample config (extra)
 import { AppConfig } from './app/shared/sample/services/app-config';
 import { MultilingualService } from './app/shared/i18n/services/multilingual.service';
+import { SampleModule } from './app/shared/sample/sample.module';
+
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
 
@@ -64,7 +64,7 @@ export function consoleLogTarget(consoleService: ConsoleService) {
 
 let DEV_IMPORTS: any[] = [];
 
-if (SeedConfig.BUILD_TYPE === 'dev') {
+if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
   DEV_IMPORTS = [
     ...DEV_IMPORTS,
     StoreDevtoolsModule.instrumentOnlyWithExtension()
@@ -80,15 +80,15 @@ if (SeedConfig.BUILD_TYPE === 'dev') {
       { provide: LogTarget, useFactory: (consoleLogTarget), deps: [ConsoleService], multi: true }
     ]),
     routerModule,
+    DEV_IMPORTS,
+    SampleModule,
     AnalyticsModule,
     MultilingualModule.forRoot([{
       provide: TranslateLoader,
       deps: [Http],
       useFactory: (translateLoaderFactory)
     }]),
-    SampleModule,
     StoreModule.provideStore(AppReducer),
-    DEV_IMPORTS,
     EffectsModule.run(MultilingualEffects),
     EffectsModule.run(NameListEffects)
   ],

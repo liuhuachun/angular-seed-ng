@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 
 // app
 import { SAMPLE_PROVIDERS } from './services/index';
-import { MultilingualModule } from '../i18n/multilingual.module';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -18,8 +17,7 @@ import { MultilingualModule } from '../i18n/multilingual.module';
     CommonModule,
     FormsModule,
     HttpModule,
-    RouterModule,
-    MultilingualModule,
+    RouterModule
   ],
   declarations: [
   ],
@@ -31,7 +29,8 @@ import { MultilingualModule } from '../i18n/multilingual.module';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
-    MultilingualModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class SampleModule {

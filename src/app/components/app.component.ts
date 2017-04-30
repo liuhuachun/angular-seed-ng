@@ -11,7 +11,6 @@ import {SeedConfig} from '../../../tools/config/seed.config';
 })
 export class AppComponent {
   title = 'HELLO';
-
   constructor(
     public analytics: AnalyticsService,
     public log: LogService,

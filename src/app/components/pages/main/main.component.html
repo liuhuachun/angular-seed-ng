@@ -1,0 +1,9 @@
+<app-lang-switcher></app-lang-switcher>
+<h1>
+  {{title | translate}}
+</h1>
+<nav>
+  <a routerLink="about" routerLinkActive="active">about</a>
+  <a (click)="loginOut()">login</a>
+</nav>
+<router-outlet></router-outlet>

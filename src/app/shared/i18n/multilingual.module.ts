@@ -13,7 +13,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from '../core/index';
 
 // module
-import { LangSwitcherComponent } from './components/index';
 import { MultilingualService } from './services/index';
 
 // for AoT compilation
@@ -37,11 +36,8 @@ export function translateLoaderFactory(http: Http) {
       useFactory: (translateLoaderFactory)
     }]),
   ],
-  declarations: [
-    LangSwitcherComponent
-  ],
+  declarations: [],
   exports: [
-    LangSwitcherComponent,
     TranslateModule
   ],
   providers: [

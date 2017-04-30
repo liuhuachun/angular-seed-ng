@@ -1,5 +1,6 @@
 // app
 
 export const routes: Array<any> = [
-  { path: 'about', loadChildren: 'app/components/system/about/about.module#AboutModule' }
+  { path: '', loadChildren: 'app/components/pages/main/main.module#MainModule' },
+  { path: 'login', loadChildren: 'app/components/pages/login/login.module#LoginModule' }
 ];

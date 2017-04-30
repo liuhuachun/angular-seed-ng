@@ -41,6 +41,7 @@ import * as fromMultilingual from '../../i18n/index';
 import { IMultilingualState } from '../../i18n/index';
 import * as fromSample from '../../sample/index';
 import { ISampleState } from '../../sample/index';
+import { BUILD_TYPES, SeedConfig } from '../../../../../tools/config/seed.config';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -67,7 +68,7 @@ const developmentReducer: ActionReducer<IAppState> = compose(storeFreeze, combin
 const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
 
 export function AppReducer(state: any, action: any) {
-  if (String('<%= BUILD_TYPE %>') === 'dev') {
+  if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
     return developmentReducer(state, action);
   } else {
     return productionReducer(state, action);

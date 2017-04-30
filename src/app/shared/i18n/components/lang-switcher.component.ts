@@ -9,7 +9,6 @@ import { ElectronEventService } from '../../electron/index';
 import * as multilingual from '../index';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-lang-switcher',
   templateUrl: 'lang-switcher.component.html',
   styleUrls: ['lang-switcher.component.scss'],
