@@ -1,5 +1,12 @@
 // angular
-import { NgModule, Optional, SkipSelf, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {
+  NgModule,
+  Optional,
+  SkipSelf,
+  ModuleWithProviders,
+  NO_ERRORS_SCHEMA,
+  CUSTOM_ELEMENTS_SCHEMA
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -34,7 +41,6 @@ import { SAMPLE_PROVIDERS } from './services/index';
   ]
 })
 export class SampleModule {
-
   constructor(@Optional() @SkipSelf() parentModule: SampleModule) {
     if (parentModule) {
       throw new Error('SampleModule already loaded; Import in root module only.');

@@ -22,7 +22,7 @@ export class MultilingualService extends Analytics {
   // default supported languages
   // see web.module.ts for example of how to provide different value
   public static SUPPORTED_LANGUAGES: Array<ILang> = [
-    { code: 'en', title: 'English' }
+    { code: 'zh', title: '简体中文' }
   ];
 
   constructor(
@@ -35,7 +35,7 @@ export class MultilingualService extends Analytics {
     this.category = CATEGORY;
 
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
+    translate.setDefaultLang('zh');
 
     // use browser/platform lang if available
     const userLang = win.navigator.language.split('-')[0];

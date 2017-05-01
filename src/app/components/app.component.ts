@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
 // app
 import { AnalyticsService } from '../shared/analytics/index';
-import { Config, LogService, AppService} from '../shared/core/index';
-import {SeedConfig} from '../../../tools/config/seed.config';
+import { LogService, AppService} from '../shared/core/index';
+import { SeedConfig } from '../../../tools/config/seed.config';
+
 
 @Component({
   selector: 'app-root',
@@ -11,11 +14,17 @@ import {SeedConfig} from '../../../tools/config/seed.config';
 })
 export class AppComponent {
   title = 'HELLO';
+
   constructor(
     public analytics: AnalyticsService,
     public log: LogService,
-    private appService: AppService
+    private titleService: Title
   ) {
+    this.setTitle(this.title);
     log.debug(`Config env: ${SeedConfig.BUILD_TYPE}`);
+  }
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
   }
 }

@@ -1,5 +1,8 @@
 <form>
-  Change Language: <select [(ngModel)]="lang" (change)="changeLang($event)" name="lang">
-    <option *ngFor="let l of supportedLanguages" [value]="l.code">{{l.title}}</option>
+  <select class="btn bg-inverse dropdown-toggle btn-sm" [(ngModel)]="lang"
+          (change)="changeLang($event)" name="lang" style="color: white">
+    <option *ngFor="let l of supportedLanguages" [value]="l.code">
+      <span style="color: white">{{l.title}}</span>
+    </option>
   </select>
 </form>

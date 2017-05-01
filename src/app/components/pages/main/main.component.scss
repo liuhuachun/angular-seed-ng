@@ -1,0 +1,38 @@
+@import "../../../../styles";
+.topbar{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height: 50px;
+  background: #333744;
+  color: #ffffff
+}
+.topbar span {
+  color: $nav-span-font-color;
+}
+.leftnav{
+  position:absolute;
+  top:50px;
+  left:0;
+  bottom:0;
+  width:200px;
+  background-color: #333744;
+  overflow-x:hidden;
+  overflow-y:auto;
+  z-index: 100;
+}
+
+.leftnav span {
+  color:$nav-span-font-color;
+}
+
+.main-right{
+  position:absolute;
+  top:50px;
+  left:200px;
+  bottom:0;
+  right:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+}

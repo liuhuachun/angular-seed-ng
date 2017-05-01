@@ -1,9 +1,41 @@
-<app-lang-switcher></app-lang-switcher>
-<h1>
-  {{title | translate}}
-</h1>
-<nav>
-  <a routerLink="about" routerLinkActive="active">about</a>
-  <a (click)="loginOut()">login</a>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse topbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about" routerLinkActive="active">
+          <span>{{ "ABOUT" | translate}}</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" (click)="loginOut()">
+          <span>{{ "LOGOUT" | translate }}</span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <app-lang-switcher></app-lang-switcher>
+    </form>
+  </div>
 </nav>
-<router-outlet></router-outlet>
+<nav class="nav flex-column leftnav">
+  <ul>
+    <li>
+      <a class="nav-link" href="#">
+        <span>Active</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav-link" href="#">
+        <span>Link</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid main-right">
+  <router-outlet></router-outlet>
+</div>

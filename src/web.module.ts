@@ -38,6 +38,9 @@ if (SeedConfig.BUILD_TYPE === 'dev') {
 import { AppConfig } from './app/shared/sample/services/app-config';
 import { MultilingualService } from './app/shared/i18n/services/multilingual.service';
 import { SampleModule } from './app/shared/sample/sample.module';
+import { AuthGuard } from './app/services/auth/auth-guard.service';
+import { AuthService } from './app/services/auth/auth.service';
+import { Ng2BootstrapModule } from 'ngx-bootstrap';
 
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
@@ -74,6 +77,7 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
 @NgModule({
   imports: [
     BrowserModule,
+    Ng2BootstrapModule.forRoot(),
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
       { provide: ConsoleService, useFactory: (cons) },
@@ -99,7 +103,9 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
     {
       provide: APP_BASE_HREF,
       useValue: SeedConfig.APP_BASE
-    }
+    },
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
