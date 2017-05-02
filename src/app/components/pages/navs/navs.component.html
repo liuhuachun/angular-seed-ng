@@ -1,0 +1,10 @@
+<nav>
+  <div (click)="clickTree()" [ngClass]="{active: isActive}"><span>{{menu.title}}</span></div>
+  <ul id="{{menu.menuTypeId}}" *ngIf="isActive" >
+    <li *ngFor="let item of menu.tf_Menus">
+      <a routerLink='{{item.routeId}}' (click)="clickWord(item)" [ngClass]="{wordColor : isWord==item}">
+        <span>{{item.title}}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

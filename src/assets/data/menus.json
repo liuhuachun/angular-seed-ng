@@ -1,0 +1,48 @@
+{
+  "menus":[{
+    "tf_iconCls":"monitor",
+    "title":"监控墙",
+    "tf_expand":true,
+    "menuType": "group",
+    "tf_Menus":[{
+      "tf_iconCls":null,
+      "tf_expand":null,
+      "tf_Menus":[],
+      "title":"监控墙",
+      "routeId":"about",
+      "menuType":"module",
+      "menuTypeId":"701010"
+    }]
+  },
+    {
+      "tf_iconCls":"",
+      "title":"系统管理",
+      "tf_expand":true,
+      "menuType": "group",
+      "tf_Menus":[{
+        "tf_iconCls":null,
+        "tf_expand":null,
+        "tf_Menus":[],
+        "title":"用户管理",
+        "routeId":"",
+        "menuType":"module",
+        "menuTypeId":"701010"
+      },{
+        "tf_iconCls":null,
+        "tf_expand":null,
+        "tf_Menus":[],
+        "title":"角色管理",
+        "routeId":"about",
+        "menuType":"module",
+        "menuTypeId":"701010"
+      },{
+        "tf_iconCls":null,
+        "tf_expand":null,
+        "tf_Menus":[],
+        "title":"部门管理",
+        "routeId":"",
+        "menuType":"module",
+        "menuTypeId":"701010"
+      }]
+    }]
+}

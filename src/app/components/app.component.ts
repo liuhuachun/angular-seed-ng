@@ -14,6 +14,7 @@ import { SeedConfig } from '../../../tools/config/seed.config';
 })
 export class AppComponent {
   title = 'HELLO';
+  menus: any[];
 
   constructor(
     public analytics: AnalyticsService,

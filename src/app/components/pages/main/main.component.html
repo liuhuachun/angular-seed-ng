@@ -22,20 +22,14 @@
     </form>
   </div>
 </nav>
-<nav class="nav flex-column leftnav">
-  <ul>
-    <li>
-      <a class="nav-link" href="#">
-        <span>Active</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link" href="#">
-        <span>Link</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<div class="leftnav">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
+</div>
 <div class="container-fluid main-right">
   <router-outlet></router-outlet>
 </div>

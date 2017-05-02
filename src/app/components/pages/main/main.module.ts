@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { MainRoutingModule } from './main.routes';
 import { MainComponent } from './main.component';
 import { LangSwitcherComponent } from '../../../shared/i18n/components/index';
+import { NavsComponent } from '../navs/navs.component';
 
 
 
@@ -20,6 +21,7 @@ import { LangSwitcherComponent } from '../../../shared/i18n/components/index';
   ],
   declarations: [
     LangSwitcherComponent,
+    NavsComponent,
     MainComponent
   ]
 })
