@@ -1,10 +1,12 @@
-[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
+# AngularSeedNg[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 [![Build Status](https://travis-ci.org/liuhuachun/angular-seed-ng.svg?branch=master)](https://travis-ci.org/liuhuachun/angular-seed-ng)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-# AngularSeedNg
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
-项目中的src/app/shared/下的内容是整合了https://github.com/NathanWalker/angular-seed-advanced.git中的内容
+
+项目中的src/app/shared/下的内容是整合了[angular-seed-advanced](https://github.com/NathanWalker/angular-seed-advanced.git)中的内容
 
 #### Integration with:
 - [ngrx/store](https://github.com/ngrx/store) RxJS powered state management, inspired by **Redux**
