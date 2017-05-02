@@ -1,6 +1,10 @@
 {
   "name": "angular-seed-ng",
   "version": "0.0.0",
+  "author": {
+    "name": "liuhuachun",
+    "email": "liuhuachun@live.cn"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -9,6 +13,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuhuachun/angular-seed-ng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liuhuachun/angular-seed-ng/issues"
   },
   "private": true,
   "dependencies": {
