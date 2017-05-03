@@ -1,5 +1,6 @@
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
+
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }
@@ -9,3 +10,11 @@
 body *{
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
 }
+.mainBottom {
+  margin-top: 50px;
+  margin-left: 180px;
+  z-index: 20;
+  padding-left: 0;
+  padding-right: 0;
+}
+

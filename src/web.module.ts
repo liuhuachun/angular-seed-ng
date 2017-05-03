@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Http } from '@angular/http';
 
@@ -78,6 +79,7 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     Ng2BootstrapModule.forRoot(),
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },

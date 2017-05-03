@@ -1,9 +1,15 @@
-<nav>
-  <div (click)="clickTree()" [ngClass]="{active: isActive}"><span>{{menu.title}}</span></div>
-  <ul id="{{menu.menuTypeId}}" *ngIf="isActive" >
-    <li *ngFor="let item of menu.tf_Menus">
+<nav class="nav flex-column">
+  <div class="sidebar-title" (click)="clickTree()" [ngClass]="{active: isActive}">
+    <i class="fa fa-home fa-fw sidebar-title-icon"></i>
+    <span class="sidebar-title">{{menu.title}}</span>
+  </div>
+  <ul class="nav-ul" *ngIf="isActive" >
+    <li class="nav-item" *ngFor="let item of menu.tf_Menus">
       <a routerLink='{{item.routeId}}' (click)="clickWord(item)" [ngClass]="{wordColor : isWord==item}">
-        <span>{{item.title}}</span>
+        <div class="nav-icon sidebar-trans">
+          <i class="fa fa-book fa-fw"></i>
+        </div>
+        <span class="nav-title">{{item.title}}</span>
       </a>
     </li>
   </ul>

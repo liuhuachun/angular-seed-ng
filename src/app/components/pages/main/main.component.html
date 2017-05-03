@@ -1,11 +1,15 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse topbar">
+<nav class="navbar navbar-toggleable-md navbar-light fixed-top topbar">
+  <button type="button" class="navbar-toggler navbar-toggler-left" data-target="#leftNavs"
+          aria-label="Toggle navigation">
+    <a (click)="leftNavShow=!leftNavShow"><span class="navbar-toggler-icon"></span></a>
+  </button>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+          aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" (click)="leftNavShow=false"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse topbar" id="navbarSupportedContent">
+    <ul class="nav navbar-nav blue-back-color">
       <li class="nav-item">
         <a class="nav-link" routerLink="about" routerLinkActive="active">
           <span>{{ "ABOUT" | translate}}</span>
@@ -17,19 +21,17 @@
         </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0 blue-back-color">
       <app-lang-switcher></app-lang-switcher>
     </form>
   </div>
 </nav>
-<div class="leftnav">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
-</div>
-<div class="container-fluid main-right">
-  <router-outlet></router-outlet>
+<div class="container-fluid mainBottom" >
+  <div class="sidebar" id="#leftNavs" *ngIf="leftNavShow">
+    <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
+  </div>
+  <div class="container-fluid maincontent row"
+       [ngClass]="{'mainLeftMove': !leftNavShow, 'main-not-move': leftNavShow}">
+    <router-outlet></router-outlet>
+  </div>
 </div>

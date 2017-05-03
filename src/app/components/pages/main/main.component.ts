@@ -10,10 +10,11 @@ import { MainService } from '../../../services/component/main.service';
 export class MainComponent implements OnInit {
   errorMessage: string;
   menus: any ;
+  leftNavShow = true;
 
   constructor(
     private mainServer: MainService,
-    private router: Router) { }
+    private router: Router) {}
 
   ngOnInit() {
     this.mainServer.getMenus()
