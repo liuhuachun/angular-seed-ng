@@ -16,6 +16,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { APP_COMPONENTS, AppComponent } from './app/components/index';
 import { BUILD_TYPES, SeedConfig } from '../tools/config/seed.config';
 import { routes } from './app/components/app.routes';
+import { LoginComponent } from './app/components/pages/login/login.component';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
@@ -100,7 +101,8 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
     EffectsModule.run(NameListEffects)
   ],
   declarations: [
-    APP_COMPONENTS
+    APP_COMPONENTS,
+    LoginComponent
   ],
   providers: [
     {

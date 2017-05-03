@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot,
-              state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+              state: RouterStateSnapshot): boolean {
     const url: string = state.url;
     return this.checkLogin(url);
   }
@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
     this.authService.redirectUrl = url;
 
     // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
     return false;
   }
 }
