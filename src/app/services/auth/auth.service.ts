@@ -20,7 +20,6 @@ export class AuthService {
   }
 
   loginOut() {
-    this.isLogIn = false;
     this.router.navigate(['/login']);
   }
 }
