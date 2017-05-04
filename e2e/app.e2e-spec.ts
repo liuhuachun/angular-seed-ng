@@ -9,6 +9,6 @@ describe('angular-seed-ng App', () => {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('系统管理平台');
   });
 });

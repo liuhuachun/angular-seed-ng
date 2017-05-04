@@ -9,7 +9,7 @@ describe('MainService', () => {
     });
   });
 
-  it('should ...', inject([MainService], (service: MainService) => {
-    expect(service).toBeTruthy();
+  it('should toBeDefined', inject([MainService], (service: MainService) => {
+    expect(service).toBeDefined();
   }));
 });

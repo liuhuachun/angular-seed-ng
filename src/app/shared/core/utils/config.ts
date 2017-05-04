@@ -1,3 +1,8 @@
+export interface EnvConfig {
+  API?: string;
+  ENV?: string;
+}
+
 export interface IPlatforms {
   WEB: string;
   MOBILE_NATIVE: string;
@@ -43,7 +48,13 @@ export class Config {
   public static IS_DESKTOP(): boolean {
     return Config.PLATFORM_TARGET === Config.PLATFORMS.DESKTOP;
   }
-
+  public static ENVIRONMENT(): EnvConfig {
+    try {
+      return {};
+    } catch (exp) {
+      return {};
+    }
+  }
   public static IS_DEBUG_MODE(): boolean {
     for (const key in Config.DEBUG) {
       if (Config.DEBUG[key]) {
