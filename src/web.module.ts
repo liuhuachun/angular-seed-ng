@@ -42,7 +42,6 @@ import { MultilingualService } from './app/shared/i18n/services/multilingual.ser
 import { SampleModule } from './app/shared/sample/sample.module';
 import { AuthGuard } from './app/services/auth/auth-guard.service';
 import { AuthService } from './app/services/auth/auth.service';
-import { Ng2BootstrapModule } from 'ngx-bootstrap';
 import { MainService } from './app/services/component/main.service';
 
 // custom i18n language support
@@ -81,7 +80,6 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    Ng2BootstrapModule.forRoot(),
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
       { provide: ConsoleService, useFactory: (cons) },

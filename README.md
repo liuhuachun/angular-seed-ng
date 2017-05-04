@@ -17,7 +17,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - When using the seed, be sure to change your `write_key` [here](https://github.com/NathanWalker/angular-seed-advanced/blob/master/src/client/index.html#L24)
   - Can be changed to any vendor, [learn more here](https://github.com/angulartics/angulartics2#supported-providers)
 - [bootstrap](https://github.com/twbs/bootstrap.git) bootstrap 4.* version
-- [ngx-bootstrap](https://github.com/valor-software/ngx-bootstrap.git) Native Angular directives for Bootstrap 3 and Bootstrap 4
+- [echarts](https://github.com/ecomfe/echarts.git) 集成echarts 3
 
 ## Development server
 
