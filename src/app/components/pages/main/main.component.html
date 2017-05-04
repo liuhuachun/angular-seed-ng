@@ -1,12 +1,12 @@
 <nav class="navbar navbar-toggleable-md navbar-light fixed-top topbar">
-  <button type="button" class="navbar-toggler navbar-toggler-left" data-target="#leftNavs"
+  <button type="button" class="navbar-toggler navbar-toggler-left " data-target="#leftNavs"
           aria-label="Toggle navigation">
-    <a (click)="leftNavShow=!leftNavShow"><span class="navbar-toggler-icon"></span></a>
+    <a><span>&#9776;</span></a>
   </button>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="true" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" (click)="leftNavShow=false"></span>
+    <span (click)="leftNavShow=false">&#9776;</span>
   </button>
   <div class="collapse navbar-collapse topbar" id="navbarSupportedContent">
     <ul class="nav navbar-nav blue-back-color">
@@ -26,12 +26,9 @@
     </form>
   </div>
 </nav>
-<div class="container-fluid mainBottom" >
-  <div class="sidebar" id="#leftNavs" *ngIf="leftNavShow">
-    <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
-  </div>
-  <div class="container-fluid maincontent"
-       [ngClass]="{'mainLeftMove': !leftNavShow, 'main-not-move': leftNavShow}">
-    <router-outlet></router-outlet>
-  </div>
+<div class="sidebar" id="#leftNavs" >
+  <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
+</div>
+<div class="container-fluid mainBottom">
+  <router-outlet></router-outlet>
 </div>
