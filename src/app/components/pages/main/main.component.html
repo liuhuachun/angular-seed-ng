@@ -30,7 +30,7 @@
   <div class="sidebar" id="#leftNavs" *ngIf="leftNavShow">
     <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
   </div>
-  <div class="container-fluid maincontent row"
+  <div class="container-fluid maincontent"
        [ngClass]="{'mainLeftMove': !leftNavShow, 'main-not-move': leftNavShow}">
     <router-outlet></router-outlet>
   </div>

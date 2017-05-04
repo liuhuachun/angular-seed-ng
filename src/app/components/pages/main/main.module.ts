@@ -10,7 +10,6 @@ import { LangSwitcherComponent } from '../../../shared/i18n/components/index';
 import { NavsComponent } from '../navs/navs.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule,

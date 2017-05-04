@@ -2,7 +2,7 @@
 import {
   Directive,
   ElementRef,
-  Renderer2,
+  Renderer,
   Input,
   Output,
   HostListener,
@@ -22,7 +22,7 @@ export class Ng2EchartsDirective implements OnChanges, OnDestroy {
   @Input() dataset: any[];
   @Input() theme: string;
   @Input() loading: boolean;
-  private el: ElementRef;
+
   // chart events:
   @Output() chartInit: EventEmitter<any> = new EventEmitter<any>();
   @Output() chartClick: EventEmitter<any> = new EventEmitter<any>();
@@ -37,7 +37,9 @@ export class Ng2EchartsDirective implements OnChanges, OnDestroy {
   private myChart: any = null;
   private currentWindowWidth: any = null;
 
-  constructor() { }
+  constructor(private el: ElementRef, private renderer: Renderer) {
+  }
+
   private createChart() {
     this.theme = this.theme || 'default';
     this.currentWindowWidth = window.innerWidth;

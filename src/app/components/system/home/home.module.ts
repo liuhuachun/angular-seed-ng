@@ -5,7 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routes';
-import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { DataTableModule } from 'primeng/primeng';
+import { Ng2EchartsDirective } from '../../../directives/ng2-echarts/ng2-echarts.directive';
 
 @NgModule({
   imports: [
@@ -13,9 +14,11 @@ import { InputTextModule, ButtonModule } from 'primeng/primeng';
     FormsModule,
     TranslateModule,
     HomeRoutingModule,
-    InputTextModule,
-    ButtonModule
+    DataTableModule
   ],
-  declarations: [HomeComponent]
+  declarations: [
+    HomeComponent,
+    Ng2EchartsDirective
+  ]
 })
 export class HomeModule { }

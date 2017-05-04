@@ -1,6 +1,16 @@
-<div appEchart [options]="chartOption" class="demo-chart"></div>
-
-<input type="text" [(ngModel)]="name" pInputText>
-<button type="button" pButton label="Click" icon="fa fa-check" (click)="onClick()"></button>
-
-<div>{{message}}</div>
+<div class="row">
+  <div appEchart [options]="chartOption" class="demo-chart col-xl-4"></div>
+  <div appEchart [options]="chartOption" class="demo-chart col-xl-4"></div>
+  <div appEchart [options]="chartOption" class="demo-chart col-xl-4"></div>
+</div>
+<p-dataTable [value]="cars" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+  <p-header>List of Cars</p-header>
+  <p-column field="vin" header="Vin"></p-column>
+  <p-column field="year" header="Year"></p-column>
+  <p-column field="brand" header="Brand"></p-column>
+  <p-column field="color" header="Color"></p-column>
+  <p-column field="vin" header="Vin"></p-column>
+  <p-column field="year" header="Year"></p-column>
+  <p-column field="brand" header="Brand"></p-column>
+  <p-column field="color" header="Color"></p-column>
+</p-dataTable>

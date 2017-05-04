@@ -44,7 +44,6 @@ import { AuthGuard } from './app/services/auth/auth-guard.service';
 import { AuthService } from './app/services/auth/auth.service';
 import { Ng2BootstrapModule } from 'ngx-bootstrap';
 import { MainService } from './app/services/component/main.service';
-import { Ng2EchartsModule } from './app/directives/ng2-echarts/ng2-echarts.module';
 
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
@@ -90,7 +89,6 @@ if (SeedConfig.BUILD_TYPE === BUILD_TYPES.DEVELOPMENT) {
     ]),
     routerModule,
     DEV_IMPORTS,
-    Ng2EchartsModule,
     SampleModule,
     AnalyticsModule,
     MultilingualModule.forRoot([{
