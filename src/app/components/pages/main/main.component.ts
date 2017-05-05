@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {  Router } from '@angular/router';
 import { MainService } from '../../../services/component/main.service';
-import {AuthService} from "../../../services/auth/auth.service";
+import {AuthService} from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +11,7 @@ import {AuthService} from "../../../services/auth/auth.service";
 export class MainComponent implements OnInit {
   errorMessage: string;
   menus: any ;
-  leftNavShow = true;
+  leftNavShow = false;
 
   constructor(
     private mainServer: MainService,
@@ -27,5 +27,11 @@ export class MainComponent implements OnInit {
   }
   loginOut() {
     this.authServer.loginOut();
+  }
+  handleNavsLeft() {
+    this.leftNavShow = !this.leftNavShow;
+  }
+  onClickWord(agreed: boolean) {
+    this.leftNavShow = !agreed;
   }
 }

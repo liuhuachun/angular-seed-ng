@@ -23,7 +23,12 @@
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  z-index: 999;
 }
+.showLeftNavs{
+  display: block !important;
+}
+
 @media (max-width: 992px) {
   .sidebar{
     display: none;

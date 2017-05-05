@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navs',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavsComponent implements OnInit {
   @Input() public  menu: any ;
+  @Output() onClickWord = new EventEmitter<boolean>();
   isActive: boolean;
   isWord: boolean;
 
@@ -26,6 +27,7 @@ export class NavsComponent implements OnInit {
     }
   }
   clickWord(index: any) {
+    this.onClickWord.emit(true);
     this.isWord = index;
   }
 }

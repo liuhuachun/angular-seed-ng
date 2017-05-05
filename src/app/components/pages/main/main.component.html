@@ -1,7 +1,7 @@
 <nav class="navbar navbar-toggleable-md navbar-light fixed-top topbar">
   <button type="button" class="navbar-toggler navbar-toggler-left " data-target="#leftNavs"
           aria-label="Toggle navigation">
-    <a><span>&#9776;</span></a>
+    <a (click)="handleNavsLeft()"><span>&#9776;</span></a>
   </button>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -26,9 +26,9 @@
     </form>
   </div>
 </nav>
-<div class="sidebar" id="#leftNavs" >
-  <app-navs *ngFor="let menu of menus" [menu]="menu"></app-navs>
+<div class="sidebar" id="#leftNavs" [ngClass]="{'showLeftNavs': leftNavShow}">
+  <app-navs *ngFor="let menu of menus" [menu]="menu" (onClickWord)="onClickWord($event)"></app-navs>
 </div>
-<div class="container-fluid mainBottom">
+<div class="container-fluid mainBottom" >
   <router-outlet></router-outlet>
 </div>
