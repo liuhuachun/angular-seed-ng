@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {  Router } from '@angular/router';
 import { MainService } from '../../../services/component/main.service';
-import {AuthService} from '../../../services/auth/auth.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -15,8 +14,7 @@ export class MainComponent implements OnInit {
 
   constructor(
     private mainServer: MainService,
-    private authServer: AuthService,
-    private router: Router) {}
+    private authServer: AuthService) {}
 
   ngOnInit() {
     this.mainServer.getMenus()

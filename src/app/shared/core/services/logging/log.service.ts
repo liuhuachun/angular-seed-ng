@@ -1,10 +1,9 @@
 // angular
-import { Injectable, Inject, forwardRef } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import * as _ from 'lodash';
 // module
 import { Config } from '../../utils/config';
-import { ConsoleService } from '../console.service';
-import { LogTarget, LogEvent, LogLevel } from './log.target';
+import { LogTarget, LogLevel } from './log.target';
 
 @Injectable()
 export class LogService {

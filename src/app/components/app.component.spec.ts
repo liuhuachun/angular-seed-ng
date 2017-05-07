@@ -1,14 +1,42 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, getTestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { LogService } from '../shared/core/services/logging/log.service';
 
+@Component({
+  template: ''
+})
+class DummyComponent { }
+
+class MocLogService {
+  debug() {}
+}
 describe('AppComponent', () => {
+  let location, router;
+  const logServerStub = {};
+  const titleServiceStub = {};
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes([
+        { path: 'home', component: DummyComponent }
+      ])],
       declarations: [
-        AppComponent
+        AppComponent,
+        DummyComponent
       ],
-    }).compileComponents();
+      providers: [
+        { provide: LogService, useClass: MocLogService },
+        Title
+      ]
+    });
+    const injector = getTestBed();
+    location = injector.get(Location);
+    router = injector.get(Router);
   }));
 
   it('should create the app', async(() => {
@@ -17,16 +45,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
+  it('should go home', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    router.navigate(['/home']).then(() => {
+      expect(location.path()).toBe('/home');
+    });
   }));
 });

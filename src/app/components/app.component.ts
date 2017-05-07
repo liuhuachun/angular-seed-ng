@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 // app
-import { AnalyticsService } from '../shared/analytics/index';
-import { LogService, AppService} from '../shared/core/index';
+import { LogService } from '../shared/core/index';
 import { SeedConfig } from '../../../tools/config/seed.config';
 
 
@@ -17,7 +16,6 @@ export class AppComponent {
   menus: any[];
 
   constructor(
-    public analytics: AnalyticsService,
     public log: LogService,
     private titleService: Title
   ) {
