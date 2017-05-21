@@ -26,8 +26,10 @@
     </form>
   </div>
 </nav>
-<div class="sidebar" id="#leftNavs" [ngClass]="{'showLeftNavs': leftNavShow}">
-  <app-navs *ngFor="let menu of menus" [menu]="menu" (onClickWord)="onClickWord($event)"></app-navs>
+<div class="sidebar" id="leftNavs" [ngClass]="{'showLeftNavs': leftNavShow}">
+  <ul>
+    <app-navs *ngFor="let menu of menus" [menu]="menu" (onClickWord)="onClickWord($event)"></app-navs>
+  </ul>
 </div>
 <div class="container-fluid mainBottom" >
   <router-outlet></router-outlet>

@@ -1,16 +1,15 @@
-<nav class="nav flex-column">
-  <div class="sidebar-title" (click)="clickTree()" [ngClass]="{active: isActive}">
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" (click)="clickTree()">
     <i class="fa fa-home fa-fw sidebar-title-icon"></i>
-    <span class="sidebar-title">{{menu.title}}</span>
-  </div>
-  <ul class="nav-ul" *ngIf="isActive" >
-    <li class="nav-item" *ngFor="let item of menu.tf_Menus">
-      <a routerLink='{{item.routeId}}' (click)="clickWord(item)" [ngClass]="{wordColor : isWord==item}">
-        <div class="nav-icon sidebar-trans">
-          <i class="fa fa-book fa-fw"></i>
-        </div>
-        <span class="nav-title">{{item.title}}</span>
+    {{menu.title}}
+    <i class="icon-arrow"  [ngClass]="{open: isActive, close: !isActive}"></i>
+  </a>
+  <ul class="dropdown-menu" [ngClass]="{show: isActive, hiden: !isActive}">
+    <li *ngFor="let item of menu.tf_Menus">
+      <a routerLink='{{item.routeId}}'>
+        <i class="fa fa-book fa-fw"></i>
+        {{item.title}}
       </a>
     </li>
   </ul>
-</nav>
+</li>
